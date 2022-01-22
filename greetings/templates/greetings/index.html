@@ -1,0 +1,22 @@
+{% extends 'greetings/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="form-conteiner">
+	<form  action = "create-visitor/"  method = "post" >
+	    {% csrf_token %}
+	    {{ form.name }}
+	    <button class="submit" type="submit">Привітатись</button>
+	</form>
+</div>
+{% endblock %}
+
+{% block img %}
+<div class="img-conteiner">
+	<img src="{%  static 'greetings/image/rectangle88.png' %}", width="520", height="534">
+</div>
+{% endblock %}
+
+{% block footer_to_main %}
+{% endblock %}

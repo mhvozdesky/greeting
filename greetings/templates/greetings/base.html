@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'greetings/css/style.css' %}">
+    {% block title %}<title>Greeting</title>{% endblock %}
+</head>
+<body>
+	<div class="wrapper">
+		<div class="content">
+			{% block content %}
+			{% endblock %}
+			{% block img %}
+			{% endblock %}
+		</div>
+		
+		<div class="footer">
+			<div class="footer-content">
+				{% block footer_to_main %}
+				<div class="item-to-main">
+					<a href="">
+						<div class="to-main">
+							<div class="text">На головну</div>
+						</div>
+					</a>
+				</div>
+				{% endblock %}
+				{% block footer_list_all %}
+				<div class="item-list-all">
+					<a href="">
+						<div class="list-all">
+							<div class="text">Список учасників</div>
+						</div>
+					</a>
+				</div>
+				{% endblock %}
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>
