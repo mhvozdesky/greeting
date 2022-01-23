@@ -1,0 +1,16 @@
+{% extends 'greetings/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="conteiner">
+	<div class="hello">ПРИВІТ</div>
+	<div class="name-visitor">{{ name }}</div>
+</div>
+{% endblock %}
+
+{% block img %}
+<div class="img-conteiner">
+	<img src="{%  static 'greetings/image/rectangle92.png' %}", width="520", height="534">
+</div>
+{% endblock %}

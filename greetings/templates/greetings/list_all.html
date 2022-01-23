@@ -1,0 +1,37 @@
+{% extends 'greetings/base.html' %}
+
+{% load static %}
+
+{% block wrapper %}
+<div class="wrapper-list">
+{% endblock %}
+
+{% block main_content %}
+	<div class="content-all">
+		{% if object_list %}
+			<p class="title_text">Список гостей</p>
+		{% endif %}
+
+		{% for visitor in object_list %}
+			<p>{{ visitor.name }} {{ visitor.surname }}</p>
+		{% empty %}
+			<p class="title_text">Нікого нема</p>
+		{% endfor %}
+		<div class="pagination">
+			<div class="current">
+				Сторінка {{ page_obj.number }} із {{ page_obj.paginator.num_pages }}.
+			</div>
+			{% if page_obj.has_previous %}
+				<a href="?page=1">Перша сторінка</a>
+				<a href="?page={{ page_obj.previous_page_number }}">Попередня сторінка</a>
+			{% endif %}
+			{% if page_obj.has_next %}
+	            <a href="?page={{ page_obj.next_page_number }}">Наступна сторінка</a>
+	            <a href="?page={{ page_obj.paginator.num_pages }}">Остання сторінка</a>
+	        {% endif %}
+		</div>
+	</div>
+{% endblock %}
+
+{% block footer_list_all %}
+{% endblock %}

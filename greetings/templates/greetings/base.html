@@ -7,19 +7,20 @@
     {% block title %}<title>Greeting</title>{% endblock %}
 </head>
 <body>
-	<div class="wrapper">
+	{% block wrapper %}<div class="wrapper">{% endblock %}
+		{% block main_content %}
 		<div class="content">
 			{% block content %}
 			{% endblock %}
 			{% block img %}
 			{% endblock %}
 		</div>
-		
+		{% endblock %}
 		<div class="footer">
 			<div class="footer-content">
 				{% block footer_to_main %}
 				<div class="item-to-main">
-					<a href="">
+					<a href="{% url 'greetings' %}">
 						<div class="to-main">
 							<div class="text">На головну</div>
 						</div>
@@ -28,7 +29,7 @@
 				{% endblock %}
 				{% block footer_list_all %}
 				<div class="item-list-all">
-					<a href="">
+					<a href="{% url 'all_guests' %}">
 						<div class="list-all">
 							<div class="text">Список учасників</div>
 						</div>
@@ -37,7 +38,6 @@
 				{% endblock %}
 			</div>
 		</div>
-		
 	</div>
 </body>
 </html>

@@ -8,5 +8,6 @@ class VisitorForm(ModelForm):
         model = Visitor
         fields = ['name', 'surname']
         widgets = {
-            'name': forms.TextInput(attrs={'placeholder': "Введіть ваше ім'я"})
+            'name': forms.TextInput(attrs={'placeholder': "Введіть ваше ім'я"}),
+            'surname': forms.TextInput(attrs={'placeholder': "Введіть ваше прізвище"})
         }
